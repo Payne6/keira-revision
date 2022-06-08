@@ -130,12 +130,68 @@ re.save(q12);
 
 let q13 = new Question("Science explains how we got here but not why we're here", "True");
 q13.addChoice("False");
+re.save(q13);
 
 let q14 = new Question("What is a numinous experience?", "An experience inspiring awe and wonder that makes you feel God's presence");
 q14.addChoice("A frightening encounter with the devil or the forces of evil");
 q14.addChoice("Speaking directly to God or an angel");
 q14.addChoice("An experience that makes you question your faith in God");
+re.save(q14);
 
+let q15 = new Question("What can be messages from God or a feeling that God is present?", "Revelation");
+q15.addChoice("Prophecy");
+q15.addChoice("Possession");
+q15.addChoice("Conversion");
+re.save(q15);
+
+let q16 = new Question("Visions, prophesying, speaking in tongues and dreams are possible examples of:", "Messages from God");
+q16.addChoice("Mental illness");
+q16.addChoice("Drug use");
+re.save(q16);
+
+let q17 = new Question("Which of these is NOT considered a miracle?", "The Bible");
+q17.addChoice("The Quran");
+q17.addChoice("The fall of the walls of Jericho");
+q17.addChoice("Jesus walking on water");
+re.save(q17);
+
+let q18 = new Question("Jesus was born in a stable where?", "Bethlehem");
+q18.addChoice("Jerusalem");
+q18.addChoice("Mecca");
+q18.addChoice("Egypt");
+re.save(q18);
+
+let q19 = new Question("Jesus appears in the Quran", "True");
+q19.addChoice("False");
+re.save(q19);
+
+let q20 = new Question("Who was born first?", "Moses");
+q20.addChoice("Jesus");
+q20.addChoice("Mohammed");
+q20.addChoice("The Buddha");
+re.save(q20);
+
+let q21 = new Question("Moses leading the Jews out of Egypt is known as the:", "Exodus");
+q21.addChoice("Odyssey");
+q21.addChoice("Covenant");
+q21.addChoice("Passover");
+re.save(q21);
+
+let q22 = new Question("Where was Muhammed born?", "Mecca");
+q22.addChoice("Jersualem");
+q22.addChoice("Medinah");
+q22.addChoice("Bethlehem");
+re.save(q22);
+
+let q23 = new Question("Muslims do what during Ramadan:", "Fast");
+q23.addChoice("Dance");
+q23.addChoice("Pray ten times a day");
+q23.addChoice("Travel to Mecca");
+re.save(q23);
+
+let q24 = new Question("Muslims believe Muhammed was the last messenger of God", "True");
+q24.addChoice("False");
+re.save(q24);
 
 
 re.printQuestions(3);
