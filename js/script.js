@@ -55,6 +55,10 @@ const shuffleArray = array => {
     }
   }
 
+
+
+  
+
 //create question set and add questions to question set
 let re = new QuestionSet();
 
@@ -193,77 +197,110 @@ let q24 = new Question("Muslims believe Muhammed was the last messenger of God",
 q24.addChoice("False");
 re.save(q24);
 
+let q25 = new Question("Jerusalem is the capital of which modern-day country?", "Israel");
+q25.addChoice("Egypt");
+q25.addChoice("Lebanon");
+q25.addChoice("Saudi Arabia");
+re.save(q25);
 
-re.printQuestions(3);
+let q26 = new Question("What is the second most important text for Muslims?", "The Hadith");
+q26.addChoice("The Tahwid");
+q26.addChoice("The Sunnah");
+q26.addChoice("The Torah");
+re.save(q26);
+
+let q27 = new Question("What is the Sunnah?", "The way of life set out by Muhammed");
+q27.addChoice("The first mosque ever built");
+q27.addChoice("The Muslim practice of giving money to charity");
+q27.addChoice("The second most important text in Islam");
+re.save(q27);
+
+let q28 = new Question("Siddhartha Gautama is best known as:", "the Buddha");
+q28.addChoice("Guru Nanak");
+q28.addChoice("Guru Purnima");
+q28.addChoice("Vyasa");
+re.save(q28);
+
+let q29 = new Question("The Buddha's father was a powerful king", "True");
+q29.addChoice("False");
+
+let q30 = new Question("Before he was born, the Buddha's mother dreamed a white elephant entered her side", "True");
+q30.addChoice("False");
+
+let q31 = new Question("Aged 29 the Buddha saw an old man, a sick man, a corpse and a poor monk and realised:", "That suffering exists");
+q31.addChoice("That poverty exists")
+q31.addChoice("That sickness exists");
+q31.addChoice("That evil exists");
+re.save(q31);
+
 
 
 
 document.addEventListener("DOMContentLoaded", function() {
     //Shuffles the questions and resets the question index
+    const container = document.getElementById("questionBox");
+    const nextButton = document.getElementById("nextQuestion");
+    const startButton = document.getElementById("startButton");
+    var questionIndex = 0;
     let qs = re.questions;
     shuffleArray(qs);
-    var questionIndex = -1;
 
-    const button = document.getElementById("nextQuestion");
+    function printQ() {
+        //Displays questions and answers
+        var newQuestion = qs[questionIndex];
+        let questionPanel = document.createElement("div");
 
-    button.addEventListener("click", function() {
-        //updates the question index
-        questionIndex ++;
+        let questionPanelQuestion = document.createElement("h3");
+        questionPanelQuestion.innerText = newQuestion.question;
+        questionPanel.append(questionPanelQuestion);
 
-        //Selects the container for the questions and answers
-        //If the container is not empty, it empties it 
-        let container = document.getElementById("questionBox");
-        if (container.hasChildNodes) {
-            let containerChildren = container.children;
-            for (c of containerChildren) {
-                container.removeChild(c);
+        let answers = newQuestion.choices;
+        shuffleArray(answers);
+
+        for (var i = 0; i < answers.length; i++) {
+            let ans = answers[i];
+            let answerPara = document.createElement("p");
+            if (ans == newQuestion.answer) {
+                answerPara.classList.add("correctChoice");
+                answerPara.addEventListener("click", function() {
+                    this.classList.add("correctClicked");
+                });
+            } else {
+                answerPara.classList.add("incorrectChoice");
+                answerPara.addEventListener("click", function() {
+                    this.classList.add("incorrectClicked");
+                });
+            }
+            answerPara.innerText = ans;
+            questionPanel.append(answerPara);
+        }
+        container.append(questionPanel);
+    }
+
+    function clearContainer(item) {
+        if (item.hasChildNodes) {
+            let itemChildren = item.children;
+            for (c of itemChildren) {
+                item.removeChild(c);
             }
         }
-        
-        //checks user isn't at the end of the quiz
-        //If user is still mid-quiz, creates new question and answers
+    }
+
+
+    startButton.addEventListener("click", function() {
+        clearContainer(container);
+        printQ();
+        nextButton.style.display = "block";
+    })
+
+    nextButton.addEventListener("click", function() {
+        questionIndex ++;
+        clearContainer(container);
         if (questionIndex < qs.length) {
-            var newQuestion = qs[questionIndex];
-            let questionPanel = document.createElement("div");
-
-            let questionPanelQuestion = document.createElement("h3");
-            questionPanelQuestion.innerText = newQuestion.question;
-            questionPanel.append(questionPanelQuestion);
-
-            let answers = newQuestion.choices;
-            shuffleArray(answers);
-
-            for (var i = 0; i < answers.length; i++) {
-                let ans = answers[i];
-                let answerPara = document.createElement("p");
-                if (ans == newQuestion.answer) {
-                    answerPara.classList.add("correctChoice");
-                    answerPara.addEventListener("click", function() {
-                        this.classList.add("correctClicked");
-                    });
-                } else {
-                    answerPara.classList.add("incorrectChoice");
-                    answerPara.addEventListener("click", function() {
-                        this.classList.add("incorrectClicked");
-                    });
-                }
-                answerPara.innerText = ans;
-                /*if (ans == newQuestion.answer) {
-                    answerPara.addEventListener("click", function() {
-                        alert("Correct!");
-                    });
-                } else {
-                    answerPara.addEventListener("click", function() {
-                        alert("That's not the right answer!");
-                    });
-                }*/
-                questionPanel.append(answerPara);
-            }
-
-            container.append(questionPanel);
-
+            printQ();
         } else {
             alert("There are no more questions!\n\nRefresh the page to take the test again.");
         }
-    })
+    });
+
 })
