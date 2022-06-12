@@ -64,6 +64,23 @@ header {
     background-color: lightpink;
 }
 
+.progressBar {
+    display: none;
+    width: 80%;
+    height: 20px;
+    z-index: -1;
+    margin: auto;
+    background-color: var(--header-text-color);
+    border: 2px solid var(--main-color);
+    border-radius: 4px;
+}
+
+.progressMade {
+    width: 0%;
+    height: 20px;
+    background-color: var(--main-color);
+}
+
 .main-page h1 {
     margin-top: 0px;
     margin-bottom: 20px;
@@ -88,12 +105,14 @@ header {
 
 #startButton:hover {
     border: 5px solid black;
+    cursor: pointer;
 }
 
 #nextQuestion {
     display: none;
     width: 80px;
     height: 50px;
+    margin-top: 20px;
     border-radius: 5px;
     border: 3px solid var(--header-text-color);
     font-size: 1.5em;

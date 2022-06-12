@@ -233,6 +233,82 @@ q31.addChoice("That sickness exists");
 q31.addChoice("That evil exists");
 re.save(q31);
 
+let q32 = new Question("According to Buddha the Middle Way is:", "Living in neither poverty nor luxury");
+q32.addChoice("Giving some of your money (but not all of it) to those in need");
+q32.addChoice("Lowering your consumption of meat without giving it up completely");
+q32.addChoice("Not giving in to anger or despair");
+re.save(q32);
+
+let q33 = new Question("What does 'Buddha' mean?", "The one who is awake");
+q33.addChoice("The holy one");
+q33.addChoice("Shining lord");
+q33.addChoice("The highest");
+re.save(q33);
+
+let q34 = new Question("When the Buddha reached enlightenment, he:", "Understood reality, overcame desire and knew he was free from the cycle of rebirth");
+q34.addChoice("Gave up all pleasures completely and ate so little food he nearly died");
+q34.addChoice("Realised that suffering existed and went out into the world to find out how to cope with it");
+q34.addChoice("Studied meditation under two holy men");
+re.save(q34);
+
+let q35 = new Question("How many Buddhist precepts are there?", "Ten");
+q35.addChoice("Five");
+q35.addChoice("Eight");
+q35.addChoice("Seven");
+re.save(q35);
+
+let q36 = new Question("When was Guru Nanak born?", "1469");
+q36.addChoice("1534");
+q36.addChoice("1397");
+q36.addChoice("1722");
+re.save(q36);
+
+let q37 = new Question("Guru Nanak disappeared for three days when he was:", "Bathing in a river");
+q37.addChoice("Walking through a forest");
+q37.addChoice("Sleeping in a field");
+q37.addChoice("Fetching water from a well");
+re.save(q37);
+
+let q38 = new Question("What does Sikh mean in Sanskrit?", "Disciple");
+q38.addChoice("One who is awake");
+q38.addChoice("Follower of God");
+q38.addChoice("Holy warrior");
+re.save(q38);
+
+let q39 = new Question("Muslims and Hindus both placed flowers by Guru Nanak's body. Why?", "To decide whether he would be buried or cremated");
+q39.addChoice("So that his body would remain holy after death");
+q39.addChoice("Because he was loved by both Muslims and Hindus");
+q39.addChoice("Because Guru Nanak taught that flowers were sacred");
+re.save(q39);
+
+let q40 = new Question("What is Guru Nanak Gurpurab?", "A celebration of Guru Nanak's birthday");
+q40.addChoice("The Sikh holy book");
+q40.addChoice("A sweet food served to visitors to a Gurdwara");
+q40.addChoice("A Sikh harvest festival");
+re.save(q40);
+
+let q41 = new Question("What is the Guru Granth Sahib?", "The Sikh holy book");
+q41.addChoice("The Sikh way of life");
+q41.addChoice("Guru Nanak's birthplace");
+q41.addChoice("A financial donation to a Gurdwara");
+re.save(q41);
+
+let q42 = new Question("According to Guru Nanak, everyone is equal in God's eyes", "True");
+q42.addChoice("False");
+re.save(q42);
+
+let q43 = new Question("How many gurus came after Guru Nanak?", "Nine");
+q43.addChoice("Ten");
+q43.addChoice("Seven");
+q43.addChoice("Four");
+
+let q44 = new Question("What is the lyot?", "The divine light passed from guru to guru");
+q44.addChoice("The Sikh holy book");
+q44.addChoice("The celebration of guru Nanak's birthday");
+q44.addChoice("The custom of separating men and women in the temple");
+re.save(q44);
+
+
 
 
 
@@ -241,8 +317,13 @@ document.addEventListener("DOMContentLoaded", function() {
     const container = document.getElementById("questionBox");
     const nextButton = document.getElementById("nextQuestion");
     const startButton = document.getElementById("startButton");
+    const progressBar = document.getElementsByClassName("progressBar")[0];
+    const progressMade = document.getElementsByClassName("progressMade")[0];
     var questionIndex = 0;
+    var correct = 0;
     let qs = re.questions;
+    let quizLength = qs.length;
+
     shuffleArray(qs);
 
     function printQ() {
@@ -286,10 +367,16 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
+    function calculateProgress(answered, questions) {
+        let percentAnswered = Math.floor(answered / questions * 100);
+        return percentAnswered;
+    }
+
 
     startButton.addEventListener("click", function() {
         clearContainer(container);
         printQ();
+        progressBar.style.display = "block";
         nextButton.style.display = "block";
     })
 
@@ -298,6 +385,7 @@ document.addEventListener("DOMContentLoaded", function() {
         clearContainer(container);
         if (questionIndex < qs.length) {
             printQ();
+            progressMade.style.width = `${calculateProgress(questionIndex, quizLength)}%`;
         } else {
             alert("There are no more questions!\n\nRefresh the page to take the test again.");
         }
