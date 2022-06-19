@@ -47,6 +47,13 @@
     border-bottom: var(--header-text-color);
 }
 
+@media only screen and (max-width:500px) {
+    .entry-page-text {
+        text-align: center;
+    }
+}
+
+
 .main-page {
     background-image: url("../img/small-chicken.png");
     background-repeat: no-repeat;
@@ -136,7 +143,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 60%;
+    width: 70%;
     background: rgba(255, 255, 255, 0.5);
 }
 
@@ -174,4 +181,19 @@ header {
 .incorrectClicked {
     color: white;
     background-color: #06F9B4;
+}
+
+.incorrectContainer {
+    background-color: white;
+}
+
+@media only screen and (max-width:500px) {
+    header {
+        height: 120px;
+    }
+
+    #startButton {
+        width: 200px;
+        height: 200px;
+    }
 }
