@@ -415,6 +415,140 @@ q63.addChoice("The voice of God");
 q63.addChoice("The light passed from guru to guru");
 re.save(q63);
 
+let q64 = new Question("'Allah' is the Arabic word for", "God");
+q64.addChoice("Peace");
+q64.addChoice("The prophet");
+q64.addChoice("Obedience");
+re.save(q64);
+
+let q65 = new Question("'Islam' means: ", "Submission or surrender to Allah");
+q65.addChoice("Submission or surrender to Muhammad");
+q65.addChoice("Rejection or destruction of evil");
+q65.addChoice("Loyalty or devotion to faith");
+re.save(q65);
+
+let q66 = new Question("How many names are there for Allah in the Qur'an?", "99");
+q66.addChoice("33");
+q66.addChoice("3");
+q66.addChoice("109");
+re.save(q66);
+
+let q67 = new Question("What is a surah?", "A chapter of the Qur'an");
+q67.addChoice("An evil spirit");
+q67.addChoice("A festival");
+q67.addChoice("A name for Allah");
+re.save(q67);
+
+let q68 = new Question("What is Tawhid?", "The belief in the oneness of Allah");
+q68.addChoice("A name for Allah meaning 'The Creator'");
+q68.addChoice("The practice of giving money to charity");
+q68.addChoice("A name for Allah meaning 'The Real Truth");
+re.save(q68);
+
+let q69 = new Question("Allah is considered to be both transcendent and immanent", "True");
+q69.addChoice("False");
+re.save(q69);
+
+let q70 = new Question("How many prophets are mentioned in the Qur'an?", "25");
+q70.addChoice("50");
+q70.addChoice("5");
+q70.addChoice("99");
+re.save(q70);
+
+let q71 = new Question("The five pillars of Islam are:", "Shahadah, Salat, Zakat, Sawm, Hajj");
+q71.addChoice("Zakat, Sawm, Hajj, Tawhid, Surah");
+q71.addChoice("Shahadah, Iblis, Zakat, Sawm, Hajj");
+q71.addChoice("Salat, Shahadah, Hajj, Hadith, Rak'ah");
+re.save(q71);
+
+let q72 = new Question("Shahadah is", "A recited statement that Allah is the only God and Muhammed is his messenger");
+q72.addChoice("Praying to Allah five times a day");
+q72.addChoice("Fasting during the month of Ramadan");
+q72.addChoice("A pilgrimage to Makkah");
+re.save(q72);
+
+let q73 = new Question("Salat is", "Praying to Allah five times a day");
+q73.addChoice("A recited statement that Allah is the only God and Muhammed is his messenger");
+q73.addChoice("Giving money to charity to help the poor");
+q73.addChoice("Fasting during the month of Ramadan");
+re.save(q73);
+
+let q74 = new Question("Zakat is", "Giving money to charity to help the poor");
+q74.addChoice("Praying to Allah five times a day");
+q74.addChoice("A recited statement that Allah is the only God and Muhammed is his messenger");
+q74.addChoice("A pilgrimage to Makkah");
+re.save(q74);
+
+let q75 = new Question("Sawm is", "Fasting during the month of Ramadan");
+q75.addChoice("Praying to Allah five times a day");
+q75.addChoice("A recited statement that Allah is the only God and Muhammed is his messenger");
+q75.addChoice("A pilgrimage to Makkah");
+re.save(q75);
+
+let q76 = new Question("Hajj is", "A pilgrimage to Makkah");
+q76.addChoice("Praying to Allah five times a day");
+q76.addChoice("Fasting during the month of Ramadan");
+q76.addChoice("Giving money to charity to help the poor");
+re.save(q76);
+
+let q77 = new Question("Sikhs believe in one God", "True");
+q77.addChoice("False");
+re.save(q77);
+
+let q78 = new Question("Sikhs have one name for God", "False");
+q78.addChoice("True");
+re.save(q78);
+
+let q79 = new Question("'Waheguru' means:", "Wonderful Lord");
+q79.addChoice("True Name");
+q79.addChoice("Eternal One");
+q79.addChoice("The One who is awake");
+re.save(q79);
+
+let q80 = new Question("The Mool Mantar is", "A list of the most important qualities of Waheguru");
+q80.addChoice("The name of the Golden Temple in Amritsar");
+q80.addChoice("The Sikh holy book");
+q80.addChoice("A celebration of Guru Nanak's birthday");
+re.save(q80);
+
+let q81 = new Question("Hindus believe there is one supreme God called Brahman", "True");
+q81.addChoice("False");
+re.save(q81);
+
+let q82 = new Question("Brahma is", "The creator");
+q82.addChoice("The preserver");
+q82.addChoice("The destroyer");
+re.save(q82);
+
+let q83 = new Question("Vishnu is", "The preserver");
+q83.addChoice("The creator");
+q83.addChoice("The destroyer");
+re.save(q83);
+
+let q84 = new Question("Shiva is", "The destroyer");
+q84.addChoice("The creator");
+q84.addChoice("The preserver");
+re.save(q84);
+
+let q85 = new Question("The Trimurti is:", "The three main aspects of Brahman");
+q85.addChoice("The three main aspects of Allah");
+q85.addChoice("The third book of the Vedas");
+q85.addChoice("The moment of creation of the universe");
+re.save(q85);
+
+let q86 = new Question("An avatar is", "An incarnation of a god");
+q86.addChoice("A soul that has reached the highest stage of enlightenment");
+q86.addChoice("A prayer to Brahman");
+q86.addChoice("A hindu temple");
+re.save(q86);
+
+let q87 = new Question("Krishna is a ??? of ???", "Avatar, Vishnu");
+q87.addChoice("Avatar, Shiva");
+q87.addChoice("Member, the Trimurti");
+q87.addChoice("Enemy, Brahman");
+re.save(q87);
+
+
 
 
 
@@ -501,9 +635,12 @@ document.addEventListener("DOMContentLoaded", function() {
         var uniqueIncorrectAnswers = new Set(answeredIncorrectly);
 
         for (q of uniqueIncorrectAnswers.values()) {
-            let incorrectAnsPara = document.createElement("p");
+            let incorrectAnsPara = document.createElement("h4");
             incorrectAnsPara.innerText = q.question;
             containerElement.append(incorrectAnsPara);
+            let incorrectAnsParaCorrectAns = document.createElement("p");
+            incorrectAnsParaCorrectAns.innerText = "Correct answer: " + q.answer + "\n";
+            containerElement.append(incorrectAnsParaCorrectAns);
         }
     }
 
