@@ -588,9 +588,9 @@ q95.addChoice("Ten");
 re.save(q95);
 
 let q96 = new Question("Shi'a tradition rests on the ??? Usul ad-Din, meaning ???", "Five, Principles of faith");
-q96.addChoice("Four", "Principles of faith");
-q96.addChoice("Five", "Articles of truth");
-q96.addChoice("Four", "Articles of truth");
+q96.addChoice("Four, Principles of faith");
+q96.addChoice("Five, Articles of truth");
+q96.addChoice("Four, Articles of truth");
 re.save(q96);
 
 let q97 = new Question("According to Shi'a Muslims, Muhammad identified ??? as his successor", "Ali");
