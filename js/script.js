@@ -700,12 +700,18 @@ document.addEventListener("DOMContentLoaded", function() {
         var uniqueIncorrectAnswers = new Set(answeredIncorrectly);
 
         for (q of uniqueIncorrectAnswers.values()) {
+            let incAnsDiv = document.createElement("div");
+            incAnsDiv.classList.add("incAnsDiv");
+
             let incorrectAnsPara = document.createElement("h4");
             incorrectAnsPara.innerText = q.question;
-            containerElement.append(incorrectAnsPara);
+            incAnsDiv.append(incorrectAnsPara);
+
             let incorrectAnsParaCorrectAns = document.createElement("p");
             incorrectAnsParaCorrectAns.innerText = "Correct answer: " + q.answer + "\n";
-            containerElement.append(incorrectAnsParaCorrectAns);
+            incAnsDiv.append(incorrectAnsParaCorrectAns);
+
+            containerElement.append(incAnsDiv);
         }
     }
 
