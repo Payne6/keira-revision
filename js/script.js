@@ -548,7 +548,72 @@ q87.addChoice("Member, the Trimurti");
 q87.addChoice("Enemy, Brahman");
 re.save(q87);
 
+let q88 = new Question("Written after Muhammad's name, 'pbuh' means:", "Peace be upon him");
+q88.addChoice("Praise be upon him");
+q88.addChoice("Perfection be upon him");
+re.save(q88);
 
+let q89 = new Question("What is a verse of the Qur'an called?", "An ayah");
+q89.addChoice("A Caliph");
+q89.addChoice("A zakat");
+q89.addChoice("A Sunnah");
+re.save(q89);
+
+let q90 = new Question("In the Sunni tradition, religious leaders are known as what?", "Imams");
+q90.addChoice("Mujtahid");
+re.save(q90);
+
+let q91 = new Question("In the Shi'ah tradition, religious leaders are known as what?", "Mujtahid");
+q91.addChoice("Imaams");
+re.save(q91);
+
+let q92 = new Question("The Qur'an is only considered to be in its true form in Arabic.", "True");
+q92.addChoice("False");
+re.save(q92);
+
+let q93 = new Question("??? form around 85% of Muslims worldwide?", "Sunnis");
+q93.addChoice("Shi'a");
+re.save(q93);
+
+let q94 = new Question("The distinction between Sunni and Shi'a arose because they disagreed about", "Who should lead Muslims after Muhammad's death");
+q94.addChoice("The true nature of God");
+q94.addChoice("Whether Muhammad's birthplace was Makkah or Medinah");
+q94.addChoice("How often Muslims should pray each day.");
+re.save(q94);
+
+let q95 = new Question("in the Sunni tradition, how many articles of faith are there?", "Six");
+q95.addChoice("Four");
+q95.addChoice("Seven");
+q95.addChoice("Ten");
+re.save(q95);
+
+let q96 = new Question("Shi'a tradition rests on the ??? Usul ad-Din, meaning ???", "Five, Principles of faith");
+q96.addChoice("Four", "Principles of faith");
+q96.addChoice("Five", "Articles of truth");
+q96.addChoice("Four", "Articles of truth");
+re.save(q96);
+
+let q97 = new Question("According to Shi'a Muslims, Muhammad identified ??? as his successor", "Ali");
+q97.addChoice("Abu Bakr");
+q97.addChoice("Musa");
+q97.addChoice("Khadija");
+re.save(q97);
+
+let q98 = new Question("According to Shi'a Muslims, how many Imams have there been?", "Twelve");
+q98.addChoice("Four");
+q98.addChoice("Fifteen");
+q98.addChoice("Five");
+re.save(q98);
+
+let q99 = new Question("Shi'a Muslims believe humans have free will and there is no such thing as predestination", "True");
+q99.addChoice("False");
+re.save(q99);
+
+let q100 = new Question("Tawhid is the belief that:", "Allah is The One God and He alone created the Earth and sustains it");
+q100.addChoice("The God of the Jews is the God of the old Testament");
+q100.addChoice("That the Promised Land is in Jersualem");
+q100.addChoice("That Brahman has three main aspects");
+re.save(q100);
 
 
 
